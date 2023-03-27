@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+
+    <div class="row">
+        @foreach (var movies in Model)
+        {
+            <div class="col-md-4 col-lg-3 movie">
+                @* Columna de ancho 4 en dispositivos medianos y 3 en dispositivos grandes *@
+                <div class="movie-container">
+                    <img src="@movies.Cover" alt="texto-descriptivo" width="275" height="300" border="1" align="left" title="Título de la imagen">
+                    <h3>@movies.Title</h3>
+                    <p>@movies.Description</p>
+                </div>
+            </div>
+        }
+    </div>
+
+    <style>
+        .movie {
+            margin-bottom: 30px;
+        }
+
+        .movie-container {
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .movie img {
+            display: block;
+            margin-right: 20px;
+            float: left;
+        }
+
+        .movie h3 {
+            margin-top: 0px;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .movie p {
+            margin-bottom: 0px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
+
+
